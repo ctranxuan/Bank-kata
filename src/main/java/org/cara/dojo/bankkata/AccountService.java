@@ -1,6 +1,6 @@
 package org.cara.dojo.bankkata;
 
-public class AccountService {
+public class AccountService implements IBankAccount {
 
   private IConsole console;
 
@@ -9,12 +9,12 @@ public class AccountService {
     // TODO Auto-generated constructor stub
   }
 
-  public void deposit(double i) {
+  public void deposit(double amount) {
     // TODO Auto-generated method stub
 
   }
 
-  public void withdraw(double i) {
+  public void withdraw(double amount) {
     // TODO Auto-generated method stub
 
   }

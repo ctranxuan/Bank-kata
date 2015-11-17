@@ -13,7 +13,7 @@ public class BankAT {
     // Given
     TestConsole console = new TestConsole();
 
-    AccountService accountService = new AccountService(console);
+    IBankAccount accountService = new AccountService(console);
     accountService.deposit(1000.00);
     accountService.withdraw(100.00);
     accountService.deposit(500.00);
