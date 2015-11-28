@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace BankAccount
+﻿namespace BankAccount
 {
 	public interface IPrintService
 	{
-		void Print(IEnumerable<IOperation> operationList);
+		void PrintStatement();
 	}
 }

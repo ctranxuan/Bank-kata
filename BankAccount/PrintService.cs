@@ -1,13 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace BankAccount
+﻿namespace BankAccount
 {
 	public class PrintService : IPrintService
 	{
-		public void Print(IEnumerable<IOperation> operationList)
+		private IPrinter _printer;
+		private readonly IStatementProvider _statementService;
+
+		public PrintService(IPrinter printer, IStatementProvider statementService)
 		{
-			throw new NotImplementedException();
+			_printer = printer;
+			_statementService = statementService;
+		}
+
+		public void PrintStatement()
+		{
+			var printerVisitor = new PrinterVisitor(_printer);
+			_statementService.GetStatements().Accept(printerVisitor);						
 		}
 	}
 }

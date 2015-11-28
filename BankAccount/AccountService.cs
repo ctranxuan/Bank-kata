@@ -23,7 +23,7 @@
 
 		public void PrintStatement()
 		{
-			_printService.Print(_operationService.Operations);
+			_printService.PrintStatement();
 		}
 	}
 }

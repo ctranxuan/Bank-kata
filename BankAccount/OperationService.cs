@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using BankAccount;
+﻿using BankAccount;
 
 namespace BankAccountTest
 {
@@ -10,7 +9,6 @@ namespace BankAccountTest
 			
 		}
 
-		public IEnumerable<IOperation> Operations { get; private set; }
 		public void StoreWithdraw(int amount)
 		{
 			
