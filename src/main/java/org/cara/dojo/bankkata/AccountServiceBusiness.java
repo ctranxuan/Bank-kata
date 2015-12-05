@@ -22,7 +22,7 @@ public class AccountServiceBusiness implements IBankAccountBusiness {
 
   @Override
   public void withdraw(Money amount) {
-
+    balance = balance.substract(amount);
   }
 
   @Override

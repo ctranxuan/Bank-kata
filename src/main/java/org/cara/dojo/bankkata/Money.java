@@ -1,5 +1,7 @@
 package org.cara.dojo.bankkata;
 
+import org.apache.commons.lang.NotImplementedException;
+
 public class Money {
   private double amount;
 
@@ -43,6 +45,11 @@ public class Money {
           .doubleToLongBits(other.amount))
         return false;
       return true;
+    }
+
+
+    public Money substract(Money amountWithdraw) {
+      return new Money(amount - amountWithdraw.amount);
     }
 
 }
