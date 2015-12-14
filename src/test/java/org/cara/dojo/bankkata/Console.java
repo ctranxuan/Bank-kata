@@ -8,7 +8,7 @@ import java.util.Locale;
 
 import static java.lang.String.format;
 
-public class ConsoleShould implements IConsole {
+class Console implements IConsole {
 
   public static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
   private StringBuilder printedLines = new StringBuilder();
@@ -24,7 +24,7 @@ public class ConsoleShould implements IConsole {
     printHeader();
 
     ImmutableList<Operation> operations;
-    operations = aStatement.getOperations();
+    operations = aStatement.getOperations().reverse();
 
     operations.forEach(op -> {
       printOperation(op);

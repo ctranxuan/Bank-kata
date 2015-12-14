@@ -12,11 +12,19 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * @author ctranxuan
  */
 public class Statement {
-    private List<Operation> operations = Lists.newArrayList();
+    private final List<Operation> operations;
+    private double balance;
 
-    public void addOperation(final LocalDate aDate, final float aAmount, final float aBalance) {
+    public Statement(final double aBalance) {
+        balance = aBalance;
+        operations = Lists.newArrayList();
+    }
+
+
+    public void addOperation(final LocalDate aDate, final double aAmount) {
         checkNotNull(aDate, "aDate cannot be null");
-        operations.add(new Operation(aDate, aAmount, aBalance));
+        balance = balance + aAmount;
+        operations.add(new Operation(aDate, aAmount, balance));
     }
 
     public ImmutableList<Operation> getOperations() {
