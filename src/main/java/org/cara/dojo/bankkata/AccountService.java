@@ -34,23 +34,6 @@ public class AccountService implements IBankAccount {
 
     @Override
     public void printStatement() {
-        String header;
-        header = "DATE      | AMOUNT | BALANCE";
-
-        console.print(header);
-
-        ImmutableList<Operation> operations;
-        operations = statement.getOperations();
-
-        DateTimeFormatter formatter;
-        formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
-        operations.forEach(op -> {
-            console.println();
-            console.print(format(Locale.FRANCE, "%s |  %.2f | %.2f ",
-                    op.getDate().format(formatter),
-                    op.getAmount(),
-                    op.getBalance()));
-        });
+       console.print(statement);
     }
 }

@@ -6,6 +6,5 @@ package org.cara.dojo.bankkata;
 public interface IConsole {
     String EOF = System.getProperty("line.separator");
 
-    void println();
-    void print(String newLine);
+    void print(Statement aStatement);
 }
