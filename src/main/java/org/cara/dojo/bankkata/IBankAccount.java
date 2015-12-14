@@ -1,9 +1,12 @@
 package org.cara.dojo.bankkata;
 
+/**
+ * @author ctranxuan
+ */
 public interface IBankAccount {
+    void deposit(double aDeposit);
 
-  void withdraw(double amount);
-  void deposit(double amount);
-  void printStatement();
+    void withdraw(double aWithDraw);
 
+    void printStatement();
 }
